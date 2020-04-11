@@ -6,8 +6,35 @@
 (defun hours (x) (* x 60))
 (defun minutes-to-hours (x) `(hours ,(/ (eval x) 60)))
 
-(defun time-to-finish (time-of-recipe)
-    (get-decoded-time))
+(defparameter *day-names*
+    '("Monday" "Tuesday" "Wednesday"
+      "Thursday" "Friday" "Saturday"
+      "Sunday"))
+
+(defun print-time (time)
+    (multiple-value-bind
+    (second minute hour date month year day-of-week)
+    (decode-universal-time time)
+    (format t "will be done at ~2,'0d:~2,'0d:~2,'0d of ~a, ~d/~2,'0d/~d"
+          hour
+          minute
+          second
+          (nth day-of-week *day-names*)
+          month
+          date
+          year)))
+
+(defun time-to-finish-recipe (recipe)
+    "return total time to finish given recipe"
+    (time-add-from-now (total-time recipe)))
+
+(defun time-add-from-now (time)
+    "Add given time to current time"
+    (multiple-value-bind
+        (second minute hour date month year day-of-week)
+        (get-decoded-time)
+    (let ((new-time (encode-universal-time second (+ minute (mod (eval time) 60)) (+ hour (/ (eval time) 60)) date month year)))
+      (print-time new-time))))
 
 (defparameter *tessinois-bread* '(
     (ingredients
