@@ -31,7 +31,7 @@
 (defun time-add-from-now (time)
     "Add given time to current time"
     (multiple-value-bind
-        (second minute hour date month year day-of-week)
+        (second minute hour date month year)
         (get-decoded-time)
     (let ((new-time (encode-universal-time second (+ minute (mod (eval time) 60)) (+ hour (/ (eval time) 60)) date month year)))
       (print-time new-time))))
