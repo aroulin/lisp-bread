@@ -6,7 +6,7 @@
 (defun hours (x) (* x 60))
 (defun minutes-to-hours (x) `(hours ,(/ (eval x) 60)))
 
-(defparameter *day-names*
+(defconst *day-names*
     '("Monday" "Tuesday" "Wednesday"
       "Thursday" "Friday" "Saturday"
       "Sunday"))

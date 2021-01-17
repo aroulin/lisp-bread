@@ -1,4 +1,4 @@
-Experimenting with LISP and bread recipes.
+Experimenting with emacs LISP and bread recipes.
 
 (minutes-to-hours (total-time *tessinois-bread*))
 

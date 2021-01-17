@@ -1,4 +1,4 @@
-(defparameter *tessinois-bread* '(
+(defconst *tessinois-bread* '(
     (ingredients
         (ap-flour           (grams 250))
         (water              (ml 160))
