@@ -30,9 +30,10 @@
         (water              (cups 1))
         (active-dry-yeast   (tsp 2.25))
         (oil                (tbsp 1))
-        (salt               (tsp 1.5)))
+        (salt               (tsp 1.5))
         (sugar              (tsp 2))
-        (whole-milk-yogurt  (oz 2)
+        (whole-milk-yogurt  (oz 2))
+	(butter             (tbsp 1.5)))
     (steps
         (mixing         active  (minutes 20)
             (mix ap-flour active-dry-yeast salt and slowly incorporate mixed water oil sugar and whole-milk-yogurt while kneading))
@@ -44,9 +45,10 @@
         (second-rise    passive (minutes 10)
             (rise for 10 minutes))
         (roll-and-bake  active  (minutes 30)
-	    (brush cast iron with (oil (tbsp 1)). Heat on medium for 5 minutes.
+	    (brush cast iron with oil. Heat on medium for 5 minutes. Wipe excess oil.
 	    Press and roll each ball into 9-inch circle. Poke 20-25 times.
-	    cook each side for 2-4 minutes until puffy/brown. Poke any air bubble.)
-        (bake           passive (minutes 30)
-            (bake for 30 minutes or until golden))
+	    cook each side for 2-4 minutes until puffy/brown. Poke any air bubble.
+	    keep warm in oven, covered with aluminium foil))
+        (brush          active (minutes 10)
+            (brush with melted butter))
      )))
