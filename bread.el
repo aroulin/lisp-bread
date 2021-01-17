@@ -1,10 +1,13 @@
-(defun grams (x) x)
-(defun ml (x) x)
-(defun tsp (x) x)
+(defun grams (x) (float x))
+(defun oz (x) (float x))
+(defun ml (x) (float x))
+(defun cups (x) (float x))
+(defun tsp (x) (float x))
+(defun tbsp (x) (float x))
 
-(defun minutes (x) x)
-(defun hours (x) (* x 60))
-(defun minutes-to-hours (x) `(hours ,(/ (eval x) 60)))
+(defun minutes (x) (float x))
+(defun hours (x) (* (float x) 60))
+(defun minutes-to-hours (x) `(hours ,(/ (eval (float x)) 60)))
 
 (defconst *day-names*
     '("Monday" "Tuesday" "Wednesday"
